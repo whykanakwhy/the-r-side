@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Message Cards</title>
+    <style>
+        body {
+            font-family: "Lucida Handwriting", cursive;
+            background: url('https://images.unsplash.com/photo-1526779259212-939e64788e3c?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZnJlZSUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D') no-repeat center center fixed;
+            background-blend-mode: multiply;
+            background-size: cover;
+            backdrop-filter: blur(3px);
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #222222;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+            perspective: 1000px;
+            position: relative;
+        }
+        .card {
+            width: 200px;
+            height: 300px;
+            background: #5a4e7c;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            cursor: pointer;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+        .card .front, .card .back {
+            font-family: "Segoe Script";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .card .front {
+            background: #9084b4;
+        }
+        .card .back {
+            background: #3e2c5d;
+            transform: rotateY(180deg);
+            color: #ffd700;
+            font-weight: bold;
+            text-align: center;
+        }
+        h1 {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: 2.5rem;
+            color: #fff;
+            user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happpppyyyyy Birthdayyyyyyyy My Loveeeeeeee<br> My Rishhh</h1>
+    <div class="container">
+        <div class="card" onclick="flipCard(this)">
+            <div class="front">Click me</div>
+            <div class="back">I love you soooo much!!</div>
+        </div>
+        <div class="card" onclick="flipCard(this)">
+            <div class="front">Click me</div>
+            <div class="back">Keep shining bright!</div>
+        </div>
+        <div class="card" onclick="flipCard(this)">
+            <div class="front">Click me</div>
+            <div class="back">You are amazing!</div>
+        </div>
+    </div>
+
+    <script>
+        function flipCard(card) {
+            card.classList.toggle('flipped');
+        }
+    </script>
+</body>
+</html>
+
